@@ -1,0 +1,272 @@
+/* Global variables */
+:root{
+  /* Color */
+  --blue:  #0065FC;
+  --blue-light: #DEEBFF;
+  --grey: #F2F2F2;
+  --black: rgb(32, 32, 32);
+  --white: rgb(250, 250, 250); 
+  /* Responsive */
+  --padding-s: 20px 0;
+  --margin-s: 0 15px;
+}
+
+/* Project */
+body {
+  margin: 0;
+  font-family: Raleway, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+section, aside, footer {
+  padding: var(--margin-s);
+}
+
+/* Header */
+header nav ul {
+  display: grid;
+  width: 100%;
+  height: 100px;
+  grid-template-areas:  "logo sub"
+                        "ancre ancre";
+  grid-template-rows: 60px 50px;
+  grid-template-columns: 1fr 1fr;
+  padding: var(--padding-s);
+}
+
+header nav ul li {
+  height: 50px;
+  width: 50vw;
+}
+
+header nav ul li a img {
+  margin: var(--margin-s);
+}
+
+header nav ul li#logo {
+  grid-area: logo;
+}
+
+header nav ul li#subscribe {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav ul li#subscribe a {
+  color: var(--blue);
+  font-weight: 900;
+  margin: var(--margin-s);
+}
+
+header nav ul div.nav__ancre {
+  grid-area: ancre;
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav ul div.nav__ancre a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav ul div.nav__ancre li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header nav ul div.nav__ancre li a {
+  color: var(--black);
+  border-bottom: solid 3px;
+  border-color: var(--grey);
+}
+
+header nav ul div.nav__ancre li a[data-active="true"] {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+#subscribe {
+  grid-area: sub;
+}
+
+/* Section search */
+section header h2 {
+  margin-top: 0;
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 200;
+}
+
+section div.search__container {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  border: 1px solid;
+  border-color: var(--grey);
+  border-radius: 15px;
+}
+
+section div.search__container label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 15px 0 0 15px;
+  background-color: var(--grey);
+}
+
+section div.search__container label i {
+  font-size: 1.2em;
+}
+
+section div.search__container input {
+  flex-grow: 4;
+  border: none;
+  padding: 0 0 0 20px;
+}
+
+section div.search__container button {
+  padding: 0 17px;
+  border: none;
+  background-color: var(--blue);
+  border-radius: 15px;
+}
+
+section div.search__container input::placeholder {
+  font-size: 1.2em;
+  color: black;
+  font-weight: 900;
+  font-family: Raleway, sans-serif;
+}
+
+section div.search__container button i {
+  font-size: 1.2em;
+  color: var(--white);
+}
+
+section div.checkbox__container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+section div.checkbox__container div.checkbox__group {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: fit-content;
+  padding: 0 0 0 40px;
+  margin: 0 10px 10px 0;
+  border-radius: 200px;
+  border: solid 2px var(--grey);
+}
+
+section div.checkbox__container div.checkbox__group i {
+  color: var(--blue);
+  position: relative;
+}
+
+section div.checkbox__container div.checkbox__group i::before {
+  position: absolute;
+  z-index: 900;
+  top: 50%;
+  left: -20px;
+  transform: translate(-50%, -50%);
+}
+
+section div.checkbox__container div.checkbox__group i::after {
+  content: "";
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: -20px;
+  transform: translate(-50%, -50%);
+  background-color: var(--blue-light);
+  border: solid 2px var(--blue-light);
+  padding: 20px;
+  border-radius: 300px;
+} 
+
+section div.checkbox__container div.checkbox__group input {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  padding: 0 15px 0 10px;
+}
+
+section .result-info {
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+}
+
+section .result-info i {
+  position: relative;
+  color: var(--blue);
+  font-size: 0.7em;
+}
+
+section .result-info i::after {
+  position: absolute;
+  content: "";
+  top: 15px;
+  left: calc(15px - 2px);
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border: solid 2px var(--grey);
+  border-radius: 999px;
+}
+
+section .result-info i::before {
+  position: absolute;
+  top: 15px;
+  left: calc(15px - 2px);
+  transform: translate(-50%, -50%);
+}
+
+section .result-info p {
+  padding: 0 0 0 35px;
+  margin: 0;
+}
+
+/* Aside */
+
+aside {
+  padding-top: 1em;
+}
+
+aside header:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+aside header i {
+  font-size: 1.5em;
+}
+
+/* Utils */
+.flex {
+  display: flex;
+}
+
+.bcg-grey {
+  background-color: var(--grey);
+}
+
+/* TO DELETE */
+img{
+  width: 50%;
+}
