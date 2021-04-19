@@ -1,5 +1,5 @@
 /* Global variables */
-:root{
+:root {
   /* Color */
   --blue:  #0065FC;
   --blue-light: #DEEBFF;
@@ -7,10 +7,37 @@
   --grey-darker: #e0e0e0;
   --black: rgb(32, 32, 32);
   --white: rgb(250, 250, 250); 
+
   /* Responsive */
   --padding-s: 20px 0;
   --margin-s: 0 15px;
   --padding-top-bot: 1em;
+
+  /* Breakpoint */
+  /* TODO: Delete, only use with SASS SCSS */
+  --mobile-s: 320px;
+  --tablet-s: 480px;
+  --mobile-m: 768px;
+  --desktop-s: 1024px;
+  --desktop-m: 1200px;
+}
+
+@media only screen and (min-width: 480px) {
+  :root {
+    --margin-s: 0 30px
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  :root {
+    --margin-s: 0 50px
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  :root {
+    --margin-s: 0 70px
+  }
 }
 
 /* Project */
@@ -179,7 +206,7 @@ section div.checkbox__container {
   flex-flow: wrap;
 }
 
-section div.checkbox__container div.checkbox__group {
+section div.checkbox__container div.checkbox__group{
   display: flex;
   align-items: center;
   height: 40px;
@@ -188,6 +215,13 @@ section div.checkbox__container div.checkbox__group {
   margin: 0 10px 10px 0;
   border-radius: 200px;
   border: solid 2px var(--grey);
+  transition: .3s ease-in-out;
+}
+
+section div.checkbox__container .checkbox__group:hover {
+  background-color: var(--grey);
+  border: solid 2px var(--blue-light);
+  transition: .3s ease-in-out;
 }
 
 section div.checkbox__container div.checkbox__group i {
@@ -273,11 +307,11 @@ section .result-info p {
 
 .card .card__image {
   box-sizing: border-box;
-  width: 40%;
+  /* width: 40%; */
 }
 
 .card .card__image img {
-  width: 140px;
+  width: 110px;
   height: 140px;
   border-radius: 15px 0 0 15px;
   object-fit: cover;
@@ -318,6 +352,22 @@ section .result-info p {
 
 .tree-stars .fas:nth-last-child(-n+2) {
   color: var(--grey-darker);
+}
+
+@media only screen and (max-width: 320px) {
+  .card .card__content-container {
+    padding: 5px;
+  }
+
+  .card .card__content-container .card__header h3 {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 350px) {
+  .card .card__image img {
+    width: 140px;
+  }
 }
 
 /* Aside */
@@ -443,9 +493,4 @@ footer .footer__container .footer__row ul li a {
 
 .bcg-grey {
   background-color: var(--grey);
-}
-
-/* TO DELETE */
-img{
-  width: 50%;
 }
