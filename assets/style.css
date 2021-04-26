@@ -46,9 +46,9 @@ body {
   font-family: Raleway, sans-serif;
 }
 
-ul {
+header nav ul {
   list-style: none;
-  padding: 0;
+  padding: 20px 0 0 0;
   margin: 0;
 }
 
@@ -75,20 +75,23 @@ section, aside, footer {
 }
 
 /* Header */
+
 header nav ul {
   display: grid;
   width: 100%;
-  height: 100px;
+  height: 110px;
   grid-template-areas:  "logo sub"
-                        "ancre ancre";
+                        "ancre_1 ancre_2";
   grid-template-rows: 60px 50px;
   grid-template-columns: 1fr 1fr;
-  padding: var(--padding-s);
 }
 
 header nav ul li {
   height: 50px;
   width: 50vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 header nav ul li a img {
@@ -111,38 +114,67 @@ header nav ul li#subscribe a {
   margin: var(--margin-s);
 }
 
-header nav ul div.nav__ancre {
-  grid-area: ancre;
-  display: flex;
-  justify-content: space-around;
+header nav ul #ancre_1 {
+  grid-area: ancre_1;
 }
 
-header nav ul div.nav__ancre a {
+header nav ul #ancre_2 {
+  grid-area: ancre_2;
+}
+
+#ancre_1, #ancre_2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ancre_1 a, #ancre_2 a {
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-header nav ul div.nav__ancre li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header nav ul div.nav__ancre li a {
   color: var(--black);
   border-bottom: solid 3px;
   border-color: var(--grey);
 }
 
-header nav ul div.nav__ancre li a[data-active="true"] {
+#ancre_1 a[data-active="true"], #ancre_2 a[data-active="true"] {
   border-color: var(--blue);
   color: var(--blue);
 }
 
 #subscribe {
   grid-area: sub;
+}
+
+@media only screen and (min-width:768px) {
+  header nav ul {
+    display: grid;
+    width: 100%;
+    height: 100px;
+    grid-template-areas:  "logo ancre_1 ancre_2 sub";
+    grid-template-rows: 60px;
+    grid-template-columns: 64vw 12vw 12vw 12vw;
+    padding: 0;
+  }
+
+  header nav ul li {
+    height: auto;
+    width: auto;
+  }
+
+  #ancre_1 a, #ancre_2 a {
+    color: var(--black);
+    border-bottom: none;
+    border-top: solid 3px;
+    border-color: var(--grey);
+  }
+  
+  #ancre_1 a[data-active="true"], #ancre_2 a[data-active="true"] {
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
 }
 
 /* Section search */
@@ -161,6 +193,7 @@ section div.search__container {
   border: 1px solid;
   border-color: var(--grey);
   border-radius: 15px;
+  max-width: 400px;
 }
 
 section div.search__container label {
@@ -290,6 +323,9 @@ section .result-info i::before {
 section .result-info p {
   padding: 0 0 0 35px;
   margin: 0;
+}
+
+@media only screen and (min-width:768px) {
 }
 
 
