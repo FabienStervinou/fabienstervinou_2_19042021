@@ -233,8 +233,10 @@ section div.search__container button i {
   color: var(--white);
 }
 
-section div.search__container button p {
+section div.search__container button::before {
+  content: "Rechercher";
   display: none;
+  color: var(--white);
 }
 
 section div.checkbox__container {
@@ -343,7 +345,7 @@ section .result-info p {
     display: none;
   }
 
-  section div.search__container button p {
+  section div.search__container button::before {
     display: block;
     color: var(--white);
     font-size: 1.2em;
